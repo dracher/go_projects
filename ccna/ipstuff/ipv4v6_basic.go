@@ -8,9 +8,8 @@ import (
 	"strings"
 )
 
-const (
-	ipv4Pattern = `^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$`
-	ipv6Pattern = `[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}`
+var (
+	ipv4Pattern = regexp.MustCompile(`\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}`)
 )
 
 type IPAddress struct {
